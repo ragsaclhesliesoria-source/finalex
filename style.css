@@ -1,0 +1,264 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d1a;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #101a30;
+    border-bottom: 2px solid #00e5ff;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    color: white;
+}
+
+.logo span,
+h1 span {
+    color: #00e5ff;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+/* SECTIONS */
+.content {
+    display: none;
+    min-height: 80vh;
+    padding: 70px 10%;
+    animation: fadeIn .7s ease;
+}
+
+.content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HOME */
+#home {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+#home.active {
+    display: flex;
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text h3 {
+    color: #00e5ff;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.home-text h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.home-text h2 {
+    color: #00e5ff;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    color: #c5d1e5;
+    line-height: 1.8;
+}
+
+button {
+    background: #00e5ff;
+    color: #080d1a;
+    border: none;
+    padding: 13px 22px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* PROFILE PICTURE */
+.profile img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #00e5ff;
+    box-shadow: 0 0 25px #00e5ff;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* HEADINGS */
+.content h1 {
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.card {
+    background: #14213b;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #1c4960;
+    box-shadow: 0 5px 20px #0005;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: #00e5ff;
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #d0d9e8;
+    line-height: 1.8;
+}
+
+/* SKILLS */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* JAVA CODE */
+.code-card {
+    overflow: hidden;
+}
+
+.code-card pre {
+    background: #050a12;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #00e5ff;
+}
+
+.code-card code {
+    color: #8fffe9;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    background: #101a30;
+    padding: 20px;
+    border-top: 2px solid #00e5ff;
+    color: #00e5ff;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    #home.active {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-text h1 {
+        font-size: 32px;
+    }
+
+    .profile img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .content {
+        padding: 45px 6%;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
